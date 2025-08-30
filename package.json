@@ -1,0 +1,13 @@
+{
+  "name": "aikido-test",
+  "version": "1.0.0",
+  "description": "Demo project with vulnerable dependency for Aikido scanning",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "lodash": "4.17.11",
+    "express": "3.21.2"
+  }
+}
