@@ -1,13 +1,16 @@
 const express = require('express');
+const helmet = require('helmet');
 const _ = require('lodash');
 const app = express();
 
+// Enable Helmet for security headers
+app.use(helmet());
+
 app.get('/', (req, res) => {
-  // Demo vulnerable usage
   let userInput = req.query.data || "{}";
   try {
     let obj = JSON.parse(userInput);
-    _.merge({}, obj); // vulnerable merge
+    _.merge({}, obj);
     res.send("Processed input: " + JSON.stringify(obj));
   } catch (e) {
     res.send("Invalid JSON input");
